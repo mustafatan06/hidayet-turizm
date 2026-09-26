@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidayet Turizm | Ankara C Plaka Servis & Taşımacılık</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                            dark: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
+
+    <!-- Topbar -->
+    <div class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-3 sm:px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-center sm:text-left">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-3 text-slate-400">
+                <span><i class="fa-solid fa-location-dot text-blue-500 mr-1"></i> Ankara, Türkiye</span>
+                <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1"></i> Resmi C Plaka</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:03120000000" class="hover:text-blue-400 transition font-medium"><i class="fa-solid fa-phone text-blue-500 mr-1"></i> 0312 000 00 00</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 h-20 flex items-center justify-between gap-2">
+            <!-- Sol Üst Logo Alanı -->
+            <a href="#" class="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl backdrop-blur-md hover:bg-white/10 transition shadow-inner max-w-[180px] sm:max-w-xs">
+                <img src="logo.png" alt="Hidayet Turizm Logo" class="h-8 sm:h-10 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/120x40?text=Hidayet+Logo';">
+            </a>
+
+            <!-- Masaüstü Navigasyon -->
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-slate-300 text-sm">
+                <a href="#hizmetler" class="hover:text-blue-400 transition">Hizmetlerimiz</a>
+                <a href="#filo" class="hover:text-blue-400 transition">C Plaka Filomuz</a>
+                <a href="#hakkimizda" class="hover:text-blue-400 transition">Kurumsal</a>
+                <a href="#iletisim" class="hover:text-blue-400 transition">İletişim</a>
+            </nav>
+
+            <!-- Teklif Al Butonu & Mobil Menü -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="#teklif" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 sm:px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-calculator"></i> <span>Teklif Al</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none" aria-label="Menüyü Aç">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-5 space-y-4 shadow-2xl">
+            <a href="#hizmetler" class="mobile-link block text-slate-200 hover:text-blue-400 font-medium py-1.5 border-b border-slate-800/60 text-base">Hizmetlerimiz</a>
+            <a href="#filo" class="mobile-link block text-slate-200 hover:text-blue-400 font-medium py-1.5 border-b border-slate-800/60 text-base">C Plaka Filomuz</a>
+            <a href="#hakkimizda" class="mobile-link block text-slate-200 hover:text-blue-400 font-medium py-1.5 border-b border-slate-800/60 text-base">Kurumsal</a>
+            <a href="#iletisim" class="mobile-link block text-slate-200 hover:text-blue-400 font-medium py-1.5 text-base">İletişim</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 sm:py-28 lg:py-40 relative overflow-hidden flex items-center bg-slate-950">
+        <div class="absolute inset-0 z-0">
+            <img src="hero-bg.jpg" alt="Hero Arka Plan" class="w-full h-full object-cover opacity-35" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-slate-900/85 to-blue-950/80"></div>
+        </div>
+
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+        <div class="absolute bottom-10 right-10 w-60 h-60 sm:w-80 sm:h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 w-full relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-300 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 backdrop-blur-sm">
+                    <i class="fa-solid fa-certificate"></i> Ankara İçi Resmi C Plaka Taşımacılık
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Ankara'da Güvenli ve Konforlu <span class="text-blue-400">Servis & Taşıma</span> Çözümleri
+                </h1>
+                <p class="text-base sm:text-xl text-slate-300 mb-8 sm:mb-10 leading-relaxed font-light">
+                    Personel ve öğrenci servislerinden özel okul gezilerine, düğün konvoylarından cenaze nakil hizmetlerine kadar tüm Ankara içi kurumsal taşımacılık ihtiyaçlarınızda yanınızdayız.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a href="#teklif" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-center transition shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3 text-sm sm:text-base">
+                        <i class="fa-solid fa-file-invoice-dollar"></i> Fiyat Teklifi Al
+                    </a>
+                    <a href="tel:03120000000" class="bg-slate-900/80 hover:bg-slate-900 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-center border border-slate-700 transition flex items-center justify-center gap-3 backdrop-blur-sm text-sm sm:text-base">
+                        <i class="fa-solid fa-phone-volume text-blue-400"></i> Hemen Ara
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Strip -->
+    <section class="bg-slate-900 border-y border-slate-800 py-6 sm:py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl sm:text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-base sm:text-lg">Tam Yetkili C Plaka</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">Ankara Büyükşehir Belediyesi onaylı resmi C plakalı araç filosu.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl sm:text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-base sm:text-lg">Uzman Şoför Kadrosu</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">SRC belgeli, güvenli sürüş bilincine sahip deneyimli sürücüler.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl sm:text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-base sm:text-lg">7/24 Kesintisiz Hizmet</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">Ankara'nın tüm ilçelerine zamanında ve planlı ulaşım garantisi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="hizmetler" class="py-16 sm:py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <span class="text-blue-400 font-bold uppercase tracking-widest text-xs sm:text-sm block mb-3">HİZMET ALANLARIMIZ</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Ankara İçi Özel Taşımacılık Çözümleri</h2>
+                <p class="text-slate-400 mt-3 sm:mt-4 text-sm sm:text-base">İhtiyacınıza özel planlanan, konforlu ve yasalara tam uygun C plaka hizmetlerimiz.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Personel Servis Taşımacılığı</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">Şirketiniz ve fabrikanız için Ankara genelinde tam zamanında, konforlu ve güvenli personel transfer hizmeti.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Güzergah optimizasyonu</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Konforlu klimalı araçlar</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Okul Gezileri & Taşımacılık</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">Öğrencilerimiz için güvenli okul servis hizmetleri ve Ankara içi müze, sergi ve eğitim gezileri için özel tahsis.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Rehberli ve güvenli gezi turları</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Öğrenci dostu deneyimli sürücüler</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-ring"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Düğün & Nişan Konvoyu</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">En mutlu gününüzde akraba ve misafirlerinizin konforlu taşınması için özel C plaka araç kiralama ve konvoy hizmeti.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Toplu misafir taşıma kolaylığı</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Dakik ve planlı transfer</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Cenaze & Taziye Hizmetleri</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">Acı gününüzde yakınlarınızın ve misafirlerinizin mezarlık ve taziye evi arasındaki ulaşımı için hassasiyetle sunulan transfer desteği.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Anlayışlı ve saygılı hizmet</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Ankara içi hızlı koordinasyon</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Özel Grup Gezileri</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">Dernekler, kulüpler veya aile grupları için Ankara içi piknik, organizasyon ve gezi amaçlı toplu taşıma çözümleri.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Esnek saat seçenekleri</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Geniş araç kapasitesi</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-blue-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Güvenli & Konforlu Yolculuk</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">Tüm araçlarımız periyodik bakımlardan geçen, hijyenik ve yolcu sigortalı modern C plaka araçlardan oluşur.</p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Düzenli hijyen temizliği</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Koltuk sigortalı güvence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="filo" class="py-16 sm:py-24 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
+                <div>
+                    <span class="text-blue-400 font-bold uppercase tracking-widest text-xs sm:text-sm block mb-3">MODERN ARAÇ FİLOSU</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">C Plaka Standartlarında Filomuz</h2>
+                </div>
+                <p class="text-slate-400 max-w-md text-xs sm:text-sm">Her türlü yolcu kapasitesine uygun, bakımlı ve yüksek konforlu araçlarımızla hizmetinizdeyiz.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <!-- Vehicle 1: Ford Transit -->
+                <div class="bg-slate-950 rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="transit.jpg" onerror="this.src='https://images.unsplash.com/photo-1557223562-6c77ef1ae287?auto=format&fit=crop&w=800&q=80'" alt="Ford Transit" class="w-full h-56 sm:h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">16 - 20 Kişilik</span>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mt-3 mb-2">Ford Transit Servis</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4">Personel servisleri ve küçük grup okul gezileri için ideal, klimalı ve konforlu C plaka araç.</p>
+                        <ul class="text-xs text-slate-300 space-y-1.5">
+                            <li><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Geniş diz mesafesi</li>
+                            <li><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Ergonomik koltuklar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2: Otokar Sultan -->
+                <div class="bg-slate-950 rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="sultan.jpg" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80'" alt="Otokar Sultan" class="w-full h-56 sm:h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">27 - 35 Kişilik</span>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mt-3 mb-2">Otokar Sultan Midibüs</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-4">Okul gezileri, düğün konvoyları ve geniş personel grupları için mükemmel geniş iç hacim.</p>
+                        <ul class="text-xs text-slate-300 space-y-1.5">
+                            <li><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Geniş bagaj hacmi</li>
+                            <li><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Güçlü iklimlendirme</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote / Offer Section -->
+    <section id="teklif" class="py-16 sm:py-24 bg-slate-950 relative">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
+                    <span class="text-blue-400 font-bold uppercase tracking-widest text-xs sm:text-sm block mb-2">HIZLI FİYAT TEKLİFİ</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ankara İçi Hizmet İçin Teklif Alın</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">Bilgilerinizi bırakın, güzergah ve detayları inceleyip hem e-posta ile iletelim hem de WhatsApp üzerinden görüşelim.</p>
+                </div>
+
+                <form id="quote-form" class="space-y-4 sm:space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Ad Soyad / Kurum Adı</label>
+                            <input type="text" id="form-name" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-blue-500 transition" placeholder="Ahmet Yılmaz">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Telefon Numarası</label>
+                            <input type="tel" id="form-phone" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-blue-500 transition" placeholder="0532 000 00 00">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Hizmet Türü</label>
+                            <select id="form-service" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-blue-500 transition">
+                                <option>Personel Servis Taşımacılığı</option>
+                                <option>Okul Gezisi & Taşımacılık</option>
+                                <option>Düğün / Nişan Konvoyu</option>
+                                <option>Cenaze / Taziye Transferi</option>
+                                <option>Özel Grup Gezisi</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Yolcu / Kişi Sayısı</label>
+                            <input type="text" id="form-count" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-blue-500 transition" placeholder="Örn: 25 Kişi">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Ankara İçi Güzergah veya Detaylar</label>
+                        <textarea id="form-details" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-blue-500 transition" placeholder="Kalkış noktası, varış noktası veya özel talepleriniz..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 sm:py-4 rounded-xl transition shadow-xl shadow-blue-600/30 text-center flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-paper-plane"></i> Teklif Talebi Gönder & WhatsApp ile Bağlan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="hakkimizda" class="py-16 sm:py-24 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 items-center">
+            <div>
+                <span class="text-blue-400 font-bold uppercase tracking-widest text-xs sm:text-sm block mb-3">HİDAYET TURİZM KURUMSAL</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">Ankara'nın Güvenilir C Plaka Servis Çözüm Ortağı</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                    Yılların kazandırdığı tecrübe ve Ankara şehir içi taşımacılık sektöründeki uzmanlığımızla; firmaların personel transferlerinden okul gezilerine, düğün konvoylarından cenaze nakil hizmetlerine kadar geniş bir yelpazede profesyonel hizmet sunmaktayız.
+                </p>
+                <div class="grid grid-cols-2 gap-4 sm:gap-6 border-t border-slate-800 pt-6">
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-black text-blue-400 mb-1">C Plaka</span>
+                        <span class="text-xs sm:text-sm text-slate-400">Tamamen Resmi Araçlar</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-black text-blue-400 mb-1">%100</span>
+                        <span class="text-xs sm:text-sm text-slate-400">Zamanında Ulaşım Garantisi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative mt-4 lg:mt-0">
+                <div class="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl"></div>
+                <img src="hero-bg.jpg" alt="Hidayet Turizm Kurumsal" class="relative rounded-3xl border border-slate-800 shadow-2xl w-full object-cover h-[280px] sm:h-[400px]" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="iletisim" class="bg-slate-950 border-t border-slate-800 pt-12 sm:pt-16 pb-10 sm:pb-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+            <div class="space-y-4">
+                <div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-md">
+                    <img src="logo.png" alt="Hidayet Turizm Logo" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/120x40?text=Hidayet+Logo';">
+                </div>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                    Ankara içi C plaka personel servisi, okul gezileri, düğün ve cenaze taşımacılığında güvenilir adresiniz.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-3 sm:mb-4">Hizmetlerimiz</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="#hizmetler" class="hover:text-blue-400 transition">Personel Servis Taşımacılığı</a></li>
+                    <li><a href="#hizmetler" class="hover:text-blue-400 transition">Okul Gezileri & Servis</a></li>
+                    <li><a href="#hizmetler" class="hover:text-blue-400 transition">Düğün & Nişan Konvoyu</a></li>
+                    <li><a href="#hizmetler" class="hover:text-blue-400 transition">Cenaze & Taziye Hizmetleri</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-3 sm:mb-4">Hızlı Bağlantılar</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="#hakkimizda" class="hover:text-blue-400 transition">Kurumsal Hakkımızda</a></li>
+                    <li><a href="#filo" class="hover:text-blue-400 transition">C Plaka Filomuz</a></li>
+                    <li><a href="#teklif" class="hover:text-blue-400 transition">Fiyat Teklifi Al</a></li>
+                    <li><a href="#iletisim" class="hover:text-blue-400 transition">İletişim Bilgileri</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-3 sm:mb-4">İletişim</h4>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-blue-500 mt-1"></i>
+                        <span>Ankara, Türkiye</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-blue-500"></i>
+                        <a href="tel:03120000000" class="hover:text-blue-400 transition">0312 000 00 00</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-blue-500"></i>
+                        <a href="mailto:hidayetturizm06@gmail.com" class="hover:text-blue-400 transition">hidayetturizm06@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-slate-900 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-3 text-center sm:text-left">
+            <p>&copy; 2026 TAN MEDYA TASARIM tarafından kurulmuştur.</p>
+            <p>Ankara C Plaka Özel Servis Çözümleri</p>
+        </div>
+    </footer>
+
+    <!-- Scripts: Mobile Menu & Form Email/WhatsApp Integration -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Handler for Mailto (hidayetturizm06@gmail.com) and WhatsApp (0536 510 97 53)
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const count = document.getElementById('form-count').value || 'Belirtilmedi';
+            const details = document.getElementById('form-details').value || 'Belirtilmedi';
+
+            // 1. Mailto Link Generation
+            const mailSubject = encodeURIComponent("Yeni Fiyat Teklifi Talebi - " + name);
+            const mailBody = encodeURIComponent(
+                `Ad Soyad / Kurum: ${name}\n` +
+                `Telefon: ${phone}\n` +
+                `Hizmet Türü: ${service}\n` +
+                `Yolcu Sayısı: ${count}\n` +
+                `Güzergah / Detaylar: ${details}`
+            );
+            const mailtoLink = `mailto:hidayetturizm06@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+            // 2. WhatsApp Link Generation (0536 510 97 53)
+            const waPhone = "905365109753";
+            const waMessage = encodeURIComponent(
+                `Merhaba, web siteniz üzerinden fiyat teklifi almak istiyorum.\n\n` +
+                `*Ad Soyad:* ${name}\n` +
+                `*Telefon:* ${phone}\n` +
+                `*Hizmet Türü:* ${service}\n` +
+                `*Yolcu Sayısı:* ${count}\n` +
+                `*Detaylar:* ${details}`
+            );
+            const whatsappLink = `https://wa.me/${waPhone}?text=${waMessage}`;
+
+            // Trigger Email Client
+            window.location.href = mailtoLink;
+
+            // Open WhatsApp after a brief delay
+            setTimeout(() => {
+                window.open(whatsappLink, '_blank');
+            }, 800);
+        });
+    </script>
+</body>
+</html>
